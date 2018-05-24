@@ -1,4 +1,4 @@
-// FermentedAgaveJuice -- Johnny Wong, Sophia Xia, Clarence Cheng
+// FermentedAgaveChains -- Johnny Wong, Sophia Xia, Clarence Cheng
 // APCS2 pd1
 // HW53 -- All That Bouncin'
 // 2018-05-24
