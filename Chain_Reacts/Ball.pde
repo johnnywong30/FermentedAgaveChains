@@ -6,6 +6,13 @@
 public class Ball {
 
   // INSTANCE VARIABLES
+  final static int moving = 0;
+  final static int growing = 1;
+  final static int shrinking = 2;
+  final static int dead = 3;
+  final float change_factor = .25;
+  final float max_radius = 50;
+  int status = 0;
   color ballColor;
   float xPos, yPos; // Starting position of a ball
   float xSpeed, ySpeed;
@@ -52,6 +59,7 @@ public class Ball {
     if (yPos > height - radius || yPos < radius) {
       bounceVertical();
     }
+    status = 0;
   }
 
   void bounceHorizontal() {
@@ -70,5 +78,23 @@ public class Ball {
     } else {
       ySpeed -= random(height/3);
     }
+  }
+
+  void shrinkBall() {
+    while (radius > 0) {
+      radius -= change_factor;
+    }
+    status = 2;
+    if(radius == 0){
+      status = 3;
+    }
+  }
+
+  void growBall() {
+    while (radius < 50) {
+      radius += change_factor;
+    }
+    status = 1;
+    shrinkBall();
   }
 }

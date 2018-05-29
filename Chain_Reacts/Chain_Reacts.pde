@@ -22,8 +22,14 @@ void setup() {
 // draw process
 void draw() {
   background(255);
-  for (Ball ball: ballHolder){
-     ball.createBall();
-     ball.moveBall();
+  Ball sBall = new Ball();
+  sBall.createBall();
+  //sBall.growBall();
+  for (Ball ball : ballHolder) {
+    ball.createBall();
+    ball.moveBall();
+    //if (pow(ball.xPos - ball.xPos, 2) + pow(ball.yPos + ball.yPos, 2) <= pow(ball.radius + ball.radius, 2) ) {
+    //  ball.growBall();
+    //}
   }
 }
